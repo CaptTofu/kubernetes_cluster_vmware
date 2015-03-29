@@ -8,9 +8,9 @@ host_list=${@-"node_01 node_02 node_03"}
 for node_host in $host_list 
 do
     echo "stopping and deleting ${node_host}"
-    sudo vmrun stop ${node_host}.vmx
+    vmrun stop ${node_host}.vmx
     rm -rf ${node_host}.vmx.lck
-    sudo vmrun deleteVM ${node_host}.vmx
+    vmrun deleteVM ${node_host}.vmx
     rm -f ${node_host}.iso
     rm -f ${node_host}_image.vmdk
     rm -f ${node_host}.vmxf
